@@ -1,0 +1,46 @@
+{
+  "_note": "Hand-written by the project author. Each on-topic query names the scheme that should be the top result. Off-topic queries (expect null) must return NOTHING so the app says 'I do not have that information' instead of inventing an answer. Because the author also wrote the scheme data, treat the scores as a development-set sanity check, not as an independent benchmark.",
+  "cases": [
+    {"q": "How much money does PM-KISAN give to farmers?", "lang": "en", "expect": "pm_kisan"},
+    {"q": "free health insurance of 5 lakh rupees for a family", "lang": "en", "expect": "pm_jay"},
+    {"q": "pension every month after 60 for unorganised workers", "lang": "en", "expect": "apy"},
+    {"q": "life insurance cover of 2 lakh for 436 rupees a year", "lang": "en", "expect": "pmjjby"},
+    {"q": "accident insurance for 20 rupees a year", "lang": "en", "expect": "pmsby"},
+    {"q": "free LPG gas connection for poor women", "lang": "en", "expect": "pmuy"},
+    {"q": "financial help to build a pucca house", "lang": "en", "expect": "pmay"},
+    {"q": "savings account for my baby daughter", "lang": "en", "expect": "ssy"},
+    {"q": "old age pension for senior citizens below poverty line", "lang": "en", "expect": "ignoaps"},
+    {"q": "loan to start a small shop without collateral", "lang": "en", "expect": "mudra"},
+    {"q": "toolkit and skill training for tailors and potters", "lang": "en", "expect": "pm_vishwakarma"},
+    {"q": "2000 rupees every month for women heads of family in Karnataka", "lang": "en", "expect": "gruha_lakshmi"},
+
+    {"q": "पीएम किसान योजना में किसानों को कितना पैसा मिलता है?", "lang": "hi", "expect": "pm_kisan"},
+    {"q": "5 लाख रुपये तक का मुफ्त इलाज", "lang": "hi", "expect": "pm_jay"},
+    {"q": "60 साल के बाद हर महीने पेंशन", "lang": "hi", "expect": "apy"},
+    {"q": "गरीब महिलाओं को मुफ्त गैस कनेक्शन", "lang": "hi", "expect": "pmuy"},
+    {"q": "बेटी के नाम पर बचत खाता", "lang": "hi", "expect": "ssy"},
+    {"q": "छोटा कारोबार शुरू करने के लिए बिना गारंटी का लोन", "lang": "hi", "expect": "mudra"},
+    {"q": "कारीगरों के लिए टूलकिट और प्रशिक्षण", "lang": "hi", "expect": "pm_vishwakarma"},
+    {"q": "पक्का घर बनाने के लिए सहायता", "lang": "hi", "expect": "pmay"},
+
+    {"q": "ರೈತರಿಗೆ ಪಿಎಂ ಕಿಸಾನ್ ಯೋಜನೆಯಲ್ಲಿ ಎಷ್ಟು ಹಣ ಸಿಗುತ್ತದೆ?", "lang": "kn", "expect": "pm_kisan"},
+    {"q": "ಉಜ್ವಲ ಯೋಜನೆಗೆ ಯಾವ ದಾಖಲೆಗಳು ಬೇಕು", "lang": "kn", "expect": "pmuy"},
+    {"q": "ಮನೆಯ ಯಜಮಾನಿಗೆ ಪ್ರತಿ ತಿಂಗಳು 2000 ರೂಪಾಯಿ", "lang": "kn", "expect": "gruha_lakshmi"},
+    {"q": "ಹೆಣ್ಣು ಮಗುವಿಗೆ ಉಳಿತಾಯ ಖಾತೆ", "lang": "kn", "expect": "ssy"},
+    {"q": "ಹಿರಿಯ ನಾಗರಿಕರಿಗೆ ವೃದ್ಧಾಪ್ಯ ಪಿಂಚಣಿ", "lang": "kn", "expect": "ignoaps"},
+    {"q": "ಸಣ್ಣ ವ್ಯಾಪಾರ ಆರಂಭಿಸಲು ಮುದ್ರಾ ಸಾಲ", "lang": "kn", "expect": "mudra"},
+    {"q": "ಆಯುಷ್ಮಾನ್ ಭಾರತ್ ಆರೋಗ್ಯ ವಿಮೆ", "lang": "kn", "expect": "pm_jay"},
+
+    {"q": "what is the weather in paris", "lang": "en", "expect": null},
+    {"q": "tell me a joke", "lang": "en", "expect": null},
+    {"q": "best pizza in bangalore", "lang": "en", "expect": null},
+    {"q": "who won the cricket world cup", "lang": "en", "expect": null},
+    {"q": "how to cook biryani", "lang": "en", "expect": null},
+    {"q": "मौसम कैसा है", "lang": "hi", "expect": null},
+    {"q": "सबसे अच्छा मोबाइल फोन कौन सा है", "lang": "hi", "expect": null},
+    {"q": "क्रिकेट मैच का स्कोर क्या है", "lang": "hi", "expect": null},
+    {"q": "ಇಂದು ಹವಾಮಾನ ಹೇಗಿದೆ", "lang": "kn", "expect": null},
+    {"q": "ಬಿರಿಯಾನಿ ಮಾಡುವುದು ಹೇಗೆ", "lang": "kn", "expect": null},
+    {"q": "ಕ್ರಿಕೆಟ್ ಪಂದ್ಯದ ಸ್ಕೋರ್ ಎಷ್ಟು", "lang": "kn", "expect": null}
+  ]
+}

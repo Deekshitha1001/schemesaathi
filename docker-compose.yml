@@ -1,0 +1,18 @@
+# One command to run everything:   docker compose up --build     then open http://localhost:8080
+# NOT TESTED by the author (Docker was unavailable while building); see README "What was tested".
+services:
+  backend:
+    build: ./backend
+    environment:
+      TRUST_PROXY: "true"            # it sits behind the nginx container below
+      LLM_PROVIDER: "${LLM_PROVIDER:-none}"
+      ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY:-}"
+      ANTHROPIC_MODEL: "${ANTHROPIC_MODEL:-claude-haiku-5-5}"
+    restart: unless-stopped
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

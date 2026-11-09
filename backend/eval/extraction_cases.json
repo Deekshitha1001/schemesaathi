@@ -1,0 +1,362 @@
+{
+ "_note": "Hand-written by the project author. 'expect' lists EVERY fact the text states; anything the extractor returns beyond that counts as a wrong fact (false positive). Dev set: the extractor was debugged against these. See extraction_heldout.json for cases written afterwards.",
+ "cases": [
+  {
+   "lang": "en",
+   "text": "I am a 45 year old farmer woman from a village in Karnataka. I own 2 acres of land and have a bank account. Family income is 80,000 per year. We have a BPL card.",
+   "expect": {
+    "age": 45,
+    "gender": "female",
+    "state": "karnataka",
+    "area": "rural",
+    "occupation": "farmer",
+    "owns_agri_land": true,
+    "has_bank_account": true,
+    "annual_income": 80000,
+    "ration_card": "bpl"
+   }
+  },
+  {
+   "lang": "en",
+   "text": "My husband died last year. I am a 38 year old widow living in Mysuru with my two kids. I have no bank account and no ration card.",
+   "expect": {
+    "age": 38,
+    "gender": "female",
+    "state": "karnataka",
+    "has_bank_account": false,
+    "ration_card": "none"
+   }
+  },
+  {
+   "lang": "en",
+   "text": "I'm 67, retired, living in a small town. I get no pension. My income is about 5000 per month and I have a BPL ration card.",
+   "expect": {
+    "age": 67,
+    "occupation": "retired",
+    "area": "urban",
+    "annual_income": 60000,
+    "ration_card": "bpl"
+   }
+  },
+  {
+   "lang": "en",
+   "text": "I am a 29 year old man running a small tea shop in Bengaluru. I earn 15000 per month. I have a bank account and I pay income tax.",
+   "expect": {
+    "age": 29,
+    "gender": "male",
+    "occupation": "business",
+    "state": "karnataka",
+    "annual_income": 180000,
+    "has_bank_account": true,
+    "pays_income_tax": true
+   }
+  },
+  {
+   "lang": "en",
+   "text": "My daughter is 6 years old and I am 32. I work as a tailor in Hubballi. We don't have a bank account.",
+   "expect": {
+    "age": 32,
+    "state": "karnataka",
+    "occupation": "artisan",
+    "traditional_trade": true,
+    "girl_child_under_10": true,
+    "has_bank_account": false
+   }
+  },
+  {
+   "lang": "en",
+   "text": "I am 24, a student, no job. My father is a government employee.",
+   "expect": {
+    "age": 24,
+    "occupation": "student"
+   }
+  },
+  {
+   "lang": "en",
+   "text": "We are a family of five in a village near Belagavi. We have no land and I work as a daily wage labourer on other people's farms. Our income is 3000 a month.",
+   "expect": {
+    "state": "karnataka",
+    "area": "rural",
+    "occupation": "labourer",
+    "owns_agri_land": false,
+    "annual_income": 36000
+   }
+  },
+  {
+   "lang": "en",
+   "text": "I am 52 years old and I own a pucca house. I have a gas connection at home. I do not pay income tax.",
+   "expect": {
+    "age": 52,
+    "has_pucca_house": true,
+    "has_lpg": true,
+    "pays_income_tax": false
+   }
+  },
+  {
+   "lang": "en",
+   "text": "We live in a kutcha house in a village and cook on firewood. Income is 2 lakh per year.",
+   "expect": {
+    "area": "rural",
+    "has_pucca_house": false,
+    "has_lpg": false,
+    "annual_income": 200000
+   }
+  },
+  {
+   "lang": "en",
+   "text": "I am a 41 year old woman, head of the family, living in Bengaluru with an APL ration card. My income is 1.5 lakh a year.",
+   "expect": {
+    "age": 41,
+    "gender": "female",
+    "household_head": true,
+    "state": "karnataka",
+    "ration_card": "apl",
+    "annual_income": 150000
+   }
+  },
+  {
+   "lang": "en",
+   "text": "I make baskets and mats at home. I am 35 and live in Tamil Nadu.",
+   "expect": {
+    "age": 35,
+    "state": "other",
+    "traditional_trade": true
+   }
+  },
+  {
+   "lang": "en",
+   "text": "My son is 8 and my daughter is 3. I am 30 years old and have a private job.",
+   "expect": {
+    "age": 30,
+    "occupation": "salaried",
+    "girl_child_under_10": true
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "मैं 62 साल का किसान हूं, गांव में रहता हूं। मेरे पास 3 एकड़ जमीन है और बैंक खाता है। महीने में 8000 रुपये कमाता हूं।",
+   "expect": {
+    "age": 62,
+    "gender": "male",
+    "occupation": "farmer",
+    "area": "rural",
+    "owns_agri_land": true,
+    "has_bank_account": true,
+    "annual_income": 96000
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "मेरी उम्र 35 साल है। मैं एक गृहिणी हूं। मेरे पास बीपीएल राशन कार्ड है और बैंक खाता नहीं है।",
+   "expect": {
+    "age": 35,
+    "gender": "female",
+    "occupation": "homemaker",
+    "ration_card": "bpl",
+    "has_bank_account": false
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "मेरी बेटी 5 साल की है और मेरी उम्र 30 साल है। हम कर्नाटक में रहते हैं।",
+   "expect": {
+    "age": 30,
+    "girl_child_under_10": true,
+    "state": "karnataka"
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "मैं 70 साल की विधवा हूं। मुझे कोई पेंशन नहीं मिलती। हमारे पास अंत्योदय कार्ड है।",
+   "expect": {
+    "age": 70,
+    "gender": "female",
+    "ration_card": "antyodaya"
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "मैं दर्जी का काम करता हूं, उम्र 28 साल, दिल्ली में रहता हूं। सालाना आय 1 लाख रुपये है।",
+   "expect": {
+    "age": 28,
+    "gender": "male",
+    "occupation": "artisan",
+    "traditional_trade": true,
+    "state": "other",
+    "annual_income": 100000
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "हमारे घर में गैस कनेक्शन नहीं है, हम लकड़ी के चूल्हे पर खाना बनाते हैं। मैं 40 साल की महिला हूं।",
+   "expect": {
+    "has_lpg": false,
+    "age": 40,
+    "gender": "female"
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "मैं सरकारी नौकरी करता हूं और आयकर देता हूं। उम्र 45 साल।",
+   "expect": {
+    "govt_employee": true,
+    "occupation": "salaried",
+    "pays_income_tax": true,
+    "age": 45,
+    "gender": "male"
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "हमारा कच्चा मकान है, गांव में रहते हैं। परिवार की आय 50,000 रुपये साल में है।",
+   "expect": {
+    "has_pucca_house": false,
+    "area": "rural",
+    "annual_income": 50000
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "मैं एक छात्र हूं, उम्र २२ साल।",
+   "expect": {
+    "occupation": "student",
+    "age": 22
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "मैं १८ साल का हूं और मेरा जनधन खाता है।",
+   "expect": {
+    "age": 18,
+    "has_bank_account": true
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "हम भूमिहीन हैं, मजदूरी करते हैं। रोज 300 रुपये कमाते हैं।",
+   "expect": {
+    "owns_agri_land": false,
+    "occupation": "labourer"
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "मैं 33 साल का हूं और मेरी छोटी सी दुकान है। मेरे पास बैंक खाता है, आयकर नहीं देता।",
+   "expect": {
+    "age": 33,
+    "occupation": "business",
+    "has_bank_account": true,
+    "pays_income_tax": false
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನನಗೆ 34 ವರ್ಷ. ನಾನು ಬೆಂಗಳೂರಿನಲ್ಲಿ ಟೈಲರ್ ಕೆಲಸ ಮಾಡುತ್ತೇನೆ. ನನ್ನ ಮಗಳಿಗೆ 5 ವರ್ಷ. ನನಗೆ ಬ್ಯಾಂಕ್ ಖಾತೆ ಇದೆ.",
+   "expect": {
+    "age": 34,
+    "state": "karnataka",
+    "occupation": "artisan",
+    "traditional_trade": true,
+    "girl_child_under_10": true,
+    "has_bank_account": true
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನಾನು ರೈತ, ನನಗೆ 55 ವರ್ಷ. ನನಗೆ 4 ಎಕರೆ ಜಮೀನು ಇದೆ. ನಾವು ಹಳ್ಳಿಯಲ್ಲಿ ವಾಸಿಸುತ್ತೇವೆ.",
+   "expect": {
+    "occupation": "farmer",
+    "age": 55,
+    "owns_agri_land": true,
+    "area": "rural"
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನನ್ನ ವಯಸ್ಸು 62. ನಮ್ಮ ಬಳಿ ಬಿಪಿಎಲ್ ಕಾರ್ಡ್ ಇದೆ. ಪಿಂಚಣಿ ಇಲ್ಲ.",
+   "expect": {
+    "age": 62,
+    "ration_card": "bpl"
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನಾನು ಗೃಹಿಣಿ. ನನಗೆ 40 ವರ್ಷ. ನಾನು ಕುಟುಂಬದ ಯಜಮಾನಿ. ನಮ್ಮ ಬಳಿ ಎಪಿಎಲ್ ಕಾರ್ಡ್ ಇದೆ.",
+   "expect": {
+    "occupation": "homemaker",
+    "gender": "female",
+    "age": 40,
+    "household_head": true,
+    "ration_card": "apl"
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನಮಗೆ ಗ್ಯಾಸ್ ಸಂಪರ್ಕ ಇಲ್ಲ. ನಾವು ಸೌದೆ ಒಲೆಯಲ್ಲಿ ಅಡುಗೆ ಮಾಡುತ್ತೇವೆ.",
+   "expect": {
+    "has_lpg": false
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನನಗೆ ತಿಂಗಳಿಗೆ 10000 ರೂಪಾಯಿ ಆದಾಯ ಇದೆ. ನಾನು ಅಂಗಡಿ ನಡೆಸುತ್ತೇನೆ.",
+   "expect": {
+    "annual_income": 120000,
+    "occupation": "business"
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ಮನೆಯ ವಾರ್ಷಿಕ ಆದಾಯ 1 ಲಕ್ಷ. ನಮಗೆ ಬ್ಯಾಂಕ್ ಖಾತೆ ಇಲ್ಲ.",
+   "expect": {
+    "annual_income": 100000,
+    "has_bank_account": false
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನಾನು ಸರ್ಕಾರಿ ನೌಕರ. ನನಗೆ ೪೫ ವರ್ಷ.",
+   "expect": {
+    "govt_employee": true,
+    "occupation": "salaried",
+    "age": 45
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನನ್ನ ಮಗಳಿಗೆ 12 ವರ್ಷ. ನನಗೆ 40 ವರ್ಷ. ನಾನು ಮೈಸೂರಿನಲ್ಲಿ ವಾಸಿಸುತ್ತೇನೆ.",
+   "expect": {
+    "age": 40,
+    "girl_child_under_10": false,
+    "state": "karnataka"
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನಾವು ಭೂರಹಿತ ಕೂಲಿ ಕಾರ್ಮಿಕರು. ನಮಗೆ ಕಚ್ಚಾ ಮನೆ ಇದೆ.",
+   "expect": {
+    "owns_agri_land": false,
+    "occupation": "labourer",
+    "has_pucca_house": false
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನಾನು ವಿದ್ಯಾರ್ಥಿ. ನನಗೆ 20 ವರ್ಷ. ಕರ್ನಾಟಕದಲ್ಲಿ ಇದ್ದೇನೆ.",
+   "expect": {
+    "occupation": "student",
+    "age": 20,
+    "state": "karnataka"
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನಾನು ವಿಧವೆ. ನನಗೆ 58 ವರ್ಷ. ನಾನು ಆದಾಯ ತೆರಿಗೆ ಪಾವತಿಸುವುದಿಲ್ಲ.",
+   "expect": {
+    "gender": "female",
+    "age": 58,
+    "pays_income_tax": false
+   }
+  }
+ ]
+}

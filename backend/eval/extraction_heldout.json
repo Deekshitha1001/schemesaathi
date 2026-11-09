@@ -1,0 +1,186 @@
+{
+ "_note": "Held-out: written AFTER the extractor was debugged on extraction_cases.json and run once before any further changes. Includes deliberately hard cases (facts about relatives).",
+ "cases": [
+  {
+   "lang": "en",
+   "text": "I am a 58 year old widow in a village near Tumakuru. I have no land, I work as a labourer. We have an Antyodaya card and I don't have a bank account.",
+   "expect": {
+    "age": 58,
+    "gender": "female",
+    "state": "karnataka",
+    "area": "rural",
+    "owns_agri_land": false,
+    "occupation": "labourer",
+    "ration_card": "antyodaya",
+    "has_bank_account": false
+   }
+  },
+  {
+   "lang": "en",
+   "text": "I am 26 and run a small garment shop. Monthly earnings are around 20000 rupees. My wife pays income tax.",
+   "expect": {
+    "age": 26,
+    "occupation": "business",
+    "annual_income": 240000,
+    "pays_income_tax": true
+   }
+  },
+  {
+   "lang": "en",
+   "text": "My mother is 70 and gets no pension. I am her son, 38 years old, a carpenter in Mangaluru.",
+   "expect": {
+    "age": 38,
+    "occupation": "artisan",
+    "traditional_trade": true,
+    "state": "karnataka"
+   }
+  },
+  {
+   "lang": "en",
+   "text": "We have a pucca house and an LPG connection. Our family income is 4 lakh per year. I am a 47 year old farmer in Kerala.",
+   "expect": {
+    "has_pucca_house": true,
+    "has_lpg": true,
+    "annual_income": 400000,
+    "age": 47,
+    "occupation": "farmer",
+    "state": "other"
+   }
+  },
+  {
+   "lang": "en",
+   "text": "I have a girl child who is 2 years old. I am 27 and live in Bangalore, I have a Jan Dhan account.",
+   "expect": {
+    "girl_child_under_10": true,
+    "age": 27,
+    "state": "karnataka",
+    "has_bank_account": true
+   }
+  },
+  {
+   "lang": "en",
+   "text": "I am unemployed, 23 years old, living in a city. I don't pay any income tax and I have no bank account.",
+   "expect": {
+    "occupation": "unemployed",
+    "age": 23,
+    "area": "urban",
+    "pays_income_tax": false,
+    "has_bank_account": false
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "मेरी उम्र 55 साल है, मैं किसान हूं और मेरे पास 5 एकड़ खेत है। मेरी सालाना आमदनी 2 लाख रुपये है।",
+   "expect": {
+    "age": 55,
+    "occupation": "farmer",
+    "owns_agri_land": true,
+    "annual_income": 200000
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "मैं गृहिणी हूं। हमारे पास राशन कार्ड नहीं है। मेरे पति आयकर नहीं देते।",
+   "expect": {
+    "gender": "female",
+    "occupation": "homemaker",
+    "ration_card": "none",
+    "pays_income_tax": false
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "मेरी 8 साल की बेटी है। मैं 36 साल की हूं और बेंगलुरु में रहती हूं।",
+   "expect": {
+    "girl_child_under_10": true,
+    "age": 36,
+    "gender": "female",
+    "state": "karnataka"
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "मैं बुनकर हूं, उम्र 44 साल, तमिलनाडु में रहता हूं।",
+   "expect": {
+    "occupation": "artisan",
+    "age": 44,
+    "state": "other",
+    "gender": "male"
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "पिताजी सरकारी कर्मचारी हैं। मैं बेरोजगार हूं, 25 साल का।",
+   "expect": {
+    "occupation": "unemployed",
+    "age": 25
+   }
+  },
+  {
+   "lang": "hi",
+   "text": "हमारे पास पक्का मकान है और गैस सिलेंडर भी है। मासिक आय 12000 रुपये है।",
+   "expect": {
+    "has_pucca_house": true,
+    "has_lpg": true,
+    "annual_income": 144000
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನಾನು 36 ವರ್ಷದ ರೈತ ಮಹಿಳೆ. ನನ್ನ ಹೆಸರಿನಲ್ಲಿ 3 ಎಕರೆ ಜಮೀನು ಇದೆ. ನಮ್ಮದು ಬಿಪಿಎಲ್ ಕಾರ್ಡ್.",
+   "expect": {
+    "age": 36,
+    "gender": "female",
+    "occupation": "farmer",
+    "owns_agri_land": true,
+    "ration_card": "bpl"
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನನಗೆ ಬ್ಯಾಂಕ್ ಖಾತೆ ಇಲ್ಲ. ನಾನು ಕೂಲಿ ಕೆಲಸ ಮಾಡುತ್ತೇನೆ. ನನಗೆ 48 ವರ್ಷ.",
+   "expect": {
+    "has_bank_account": false,
+    "occupation": "labourer",
+    "age": 48
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನನಗೆ 29 ವರ್ಷ. ನನ್ನ ಮಗಳು 4 ವರ್ಷದವಳು. ನಾವು ತುಮಕೂರಿನಲ್ಲಿ ಇರುತ್ತೇವೆ.",
+   "expect": {
+    "age": 29,
+    "girl_child_under_10": true,
+    "state": "karnataka"
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನನ್ನ ಪತಿ ಸರ್ಕಾರಿ ನೌಕರ. ನಾನು ಗೃಹಿಣಿ, ವಯಸ್ಸು 33.",
+   "expect": {
+    "occupation": "homemaker",
+    "gender": "female",
+    "age": 33
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನಾನು ಕುಂಬಾರ. ನನಗೆ 50 ವರ್ಷ. ಆದಾಯ ತಿಂಗಳಿಗೆ 6000 ರೂಪಾಯಿ.",
+   "expect": {
+    "occupation": "artisan",
+    "traditional_trade": true,
+    "age": 50,
+    "annual_income": 72000
+   }
+  },
+  {
+   "lang": "kn",
+   "text": "ನಮ್ಮ ಮನೆಯಲ್ಲಿ ಎಲ್ಪಿಜಿ ಗ್ಯಾಸ್ ಇದೆ. ನಾವು ನಗರದಲ್ಲಿ ವಾಸಿಸುತ್ತೇವೆ. ನನ್ನ ವಯಸ್ಸು 65.",
+   "expect": {
+    "has_lpg": true,
+    "area": "urban",
+    "age": 65
+   }
+  }
+ ]
+}

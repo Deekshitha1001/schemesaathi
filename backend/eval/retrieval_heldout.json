@@ -1,0 +1,29 @@
+{
+  "_note": "Held-out queries written AFTER the retrieval logic and scheme wording were tuned on retrieval_cases.json. They were run once and never used for tuning. Same author as the data, so still not an independent benchmark.",
+  "cases": [
+    {"q": "I am a farmer with two acres, can I get yearly support money from the central government?", "lang": "en", "expect": "pm_kisan"},
+    {"q": "my husband is sick and we cannot pay hospital bills, any cashless treatment scheme?", "lang": "en", "expect": "pm_jay"},
+    {"q": "I run a tailoring business and want a small loan to buy machines", "lang": "en", "expect": "mudra"},
+    {"q": "how can a poor woman get a cooking gas cylinder without paying for the connection", "lang": "en", "expect": "pmuy"},
+    {"q": "scheme for parents to save for a girl child's future", "lang": "en", "expect": "ssy"},
+    {"q": "monthly pension for old people who have no income", "lang": "en", "expect": "ignoaps"},
+    {"q": "help for artisans like potters to get training and a stipend", "lang": "en", "expect": "pm_vishwakarma"},
+    {"q": "which scheme gives free electricity or money to a Karnataka woman who runs the household", "lang": "en", "expect": "gruha_lakshmi"},
+    {"q": "which stock should I buy this week", "lang": "en", "expect": null},
+    {"q": "how far is the moon from earth", "lang": "en", "expect": null},
+
+    {"q": "मेरे पास खेत है, सरकार से सालाना कितनी आर्थिक मदद मिल सकती है", "lang": "hi", "expect": "pm_kisan"},
+    {"q": "बीमार पड़ने पर अस्पताल का खर्च सरकार उठाए ऐसी योजना", "lang": "hi", "expect": "pm_jay"},
+    {"q": "सिर्फ 20 रुपये में दुर्घटना बीमा", "lang": "hi", "expect": "pmsby"},
+    {"q": "बुजुर्गों के लिए वृद्धावस्था पेंशन", "lang": "hi", "expect": "ignoaps"},
+    {"q": "दुकान खोलने के लिए मुद्रा लोन कैसे मिलेगा", "lang": "hi", "expect": "mudra"},
+    {"q": "शेयर बाजार में पैसा कैसे लगाएं", "lang": "hi", "expect": null},
+
+    {"q": "ರೈತರಿಗೆ ವರ್ಷಕ್ಕೆ ಆರು ಸಾವಿರ ರೂಪಾಯಿ ಸಹಾಯ", "lang": "kn", "expect": "pm_kisan"},
+    {"q": "ಉಚಿತ ಅಡುಗೆ ಅನಿಲ ಸಂಪರ್ಕ", "lang": "kn", "expect": "pmuy"},
+    {"q": "ಸ್ವಂತ ಮನೆ ಕಟ್ಟಲು ಸಹಾಯಧನ", "lang": "kn", "expect": "pmay"},
+    {"q": "ಬಡಗಿ ಮತ್ತು ಕುಂಬಾರರಿಗೆ ತರಬೇತಿ ಮತ್ತು ಉಪಕರಣ", "lang": "kn", "expect": "pm_vishwakarma"},
+    {"q": "ಅಪಘಾತ ವಿಮೆ 20 ರೂಪಾಯಿ", "lang": "kn", "expect": "pmsby"},
+    {"q": "ಚಂದ್ರನ ಮೇಲೆ ಮನುಷ್ಯ ಯಾವಾಗ ಹೋದ", "lang": "kn", "expect": null}
+  ]
+}

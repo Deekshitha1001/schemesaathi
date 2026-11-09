@@ -1,0 +1,13 @@
+# Core (everything the app needs to run offline)
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+numpy>=1.26
+scikit-learn>=1.4
+python-multipart>=0.0.9   # file upload for /api/transcribe
+pypdf>=4.0                # only used by scripts/ingest_documents.py for PDFs
+
+# Optional upgrades (not installed by default; see README "Turning on the optional parts")
+# faster-whisper>=1.0            # server-side Whisper speech-to-text
+# sentence-transformers>=3.0     # dense multilingual embeddings (EMBEDDING_BACKEND=sentence-transformers)
+# anthropic>=0.40                # LLM extraction + grounded answers (LLM_PROVIDER=anthropic)

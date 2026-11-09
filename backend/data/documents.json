@@ -1,0 +1,63 @@
+{
+  "aadhaar": {"en": "Aadhaar card", "hi": "आधार कार्ड", "kn": "ಆಧಾರ್ ಕಾರ್ಡ್"},
+  "bank_passbook": {
+    "en": "Bank passbook (account linked with Aadhaar)",
+    "hi": "बैंक पासबुक (आधार से जुड़ा खाता)",
+    "kn": "ಬ್ಯಾಂಕ್ ಪಾಸ್‌ಬುಕ್ (ಆಧಾರ್‌ಗೆ ಜೋಡಣೆಯಾದ ಖಾತೆ)"
+  },
+  "land_records": {
+    "en": "Land records (RTC / Pahani / Khatauni)",
+    "hi": "भूमि रिकॉर्ड (खसरा / खतौनी)",
+    "kn": "ಜಮೀನಿನ ದಾಖಲೆ (ಪಹಣಿ / RTC)"
+  },
+  "ration_card": {"en": "Ration card", "hi": "राशन कार्ड", "kn": "ಪಡಿತರ ಚೀಟಿ"},
+  "age_proof": {
+    "en": "Age proof (birth certificate, school certificate or Aadhaar)",
+    "hi": "आयु प्रमाण (जन्म प्रमाण पत्र, स्कूल प्रमाण पत्र या आधार)",
+    "kn": "ವಯಸ್ಸಿನ ಪುರಾವೆ (ಜನನ ಪ್ರಮಾಣ ಪತ್ರ, ಶಾಲಾ ಪ್ರಮಾಣ ಪತ್ರ ಅಥವಾ ಆಧಾರ್)"
+  },
+  "passport_photo": {"en": "Passport-size photo", "hi": "पासपोर्ट साइज़ फोटो", "kn": "ಪಾಸ್‌ಪೋರ್ಟ್ ಗಾತ್ರದ ಫೋಟೋ"},
+  "mobile_linked": {
+    "en": "Mobile number linked to Aadhaar",
+    "hi": "आधार से जुड़ा मोबाइल नंबर",
+    "kn": "ಆಧಾರ್‌ಗೆ ಜೋಡಣೆಯಾದ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ"
+  },
+  "income_certificate": {"en": "Income certificate", "hi": "आय प्रमाण पत्र", "kn": "ಆದಾಯ ಪ್ರಮಾಣ ಪತ್ರ"},
+  "residence_proof": {"en": "Address / residence proof", "hi": "निवास / पते का प्रमाण", "kn": "ವಾಸಸ್ಥಳ / ವಿಳಾಸದ ಪುರಾವೆ"},
+  "girl_birth_cert": {
+    "en": "Daughter's birth certificate",
+    "hi": "बेटी का जन्म प्रमाण पत्र",
+    "kn": "ಮಗಳ ಜನನ ಪ್ರಮಾಣ ಪತ್ರ"
+  },
+  "parent_id": {
+    "en": "Parent / guardian ID and address proof",
+    "hi": "माता-पिता / अभिभावक का पहचान और पते का प्रमाण",
+    "kn": "ಪೋಷಕರ ಗುರುತು ಮತ್ತು ವಿಳಾಸದ ಪುರಾವೆ"
+  },
+  "business_proof": {
+    "en": "Business proof or a simple business plan (e.g. Udyam registration, shop licence)",
+    "hi": "व्यवसाय का प्रमाण या सरल व्यवसाय योजना (जैसे उद्यम पंजीकरण, दुकान लाइसेंस)",
+    "kn": "ವ್ಯಾಪಾರದ ಪುರಾವೆ ಅಥವಾ ಸರಳ ವ್ಯಾಪಾರ ಯೋಜನೆ (ಉದಾ. ಉದ್ಯಮ್ ನೋಂದಣಿ, ಅಂಗಡಿ ಪರವಾನಗಿ)"
+  },
+  "trade_proof": {
+    "en": "Proof of your trade (as asked at registration, e.g. self-declaration or work details)",
+    "hi": "अपने काम का प्रमाण (पंजीकरण के समय मांगे अनुसार, जैसे स्व-घोषणा या कार्य विवरण)",
+    "kn": "ನಿಮ್ಮ ಕಸುಬಿನ ಪುರಾವೆ (ನೋಂದಣಿ ವೇಳೆ ಕೇಳಿದಂತೆ, ಉದಾ. ಸ್ವಯಂ ಘೋಷಣೆ ಅಥವಾ ಕೆಲಸದ ವಿವರ)"
+  },
+  "bpl_proof": {
+    "en": "BPL / Antyodaya card or proof of being on the beneficiary list",
+    "hi": "बीपीएल / अंत्योदय कार्ड या लाभार्थी सूची में नाम का प्रमाण",
+    "kn": "ಬಿಪಿಎಲ್ / ಅಂತ್ಯೋದಯ ಕಾರ್ಡ್ ಅಥವಾ ಫಲಾನುಭವಿ ಪಟ್ಟಿಯಲ್ಲಿರುವ ಪುರಾವೆ"
+  },
+  "house_declaration": {
+    "en": "Self-declaration that you do not own a pucca house",
+    "hi": "पक्का मकान न होने की स्व-घोषणा",
+    "kn": "ಪಕ್ಕಾ ಮನೆ ಇಲ್ಲವೆಂಬ ಸ್ವಯಂ ಘೋಷಣೆ"
+  },
+  "nominee_details": {"en": "Nominee details", "hi": "नामांकित व्यक्ति (नॉमिनी) का विवरण", "kn": "ನಾಮನಿರ್ದೇಶಿತರ (ನಾಮಿನಿ) ವಿವರ"},
+  "lpg_declaration": {
+    "en": "Declaration that your household has no LPG connection",
+    "hi": "घर में एलपीजी कनेक्शन न होने की घोषणा",
+    "kn": "ಮನೆಯಲ್ಲಿ ಎಲ್‌ಪಿಜಿ ಸಂಪರ್ಕ ಇಲ್ಲವೆಂಬ ಘೋಷಣೆ"
+  }
+}

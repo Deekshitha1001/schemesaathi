@@ -1,0 +1,834 @@
+{
+  "_meta": {
+    "status": "SEED DATA - written from general knowledge of public scheme rules. NOT yet verified against official sources.",
+    "how_to_verify": "Open each scheme's source_url and check every item in `verify`. Then set last_verified to the date (YYYY-MM-DD). See docs/DATA_VERIFICATION.md.",
+    "rule_ops": [
+      "is_true",
+      "is_false",
+      "eq",
+      "in",
+      "gte",
+      "lte",
+      "between"
+    ],
+    "soft": "A criterion with soft=true is only a rough indicator, so a pass can never produce a definite 'eligible'."
+  },
+  "schemes": [
+    {
+      "id": "pm_kisan",
+      "level": "central",
+      "category": "farmers",
+      "name": {
+        "en": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+        "hi": "पीएम-किसान (प्रधानमंत्री किसान सम्मान निधि)",
+        "kn": "ಪಿಎಂ-ಕಿಸಾನ್ (ಪ್ರಧಾನ ಮಂತ್ರಿ ಕಿಸಾನ್ ಸಮ್ಮಾನ್ ನಿಧಿ)"
+      },
+      "summary": {
+        "en": "Income support for farmer families who own cultivable land.",
+        "hi": "खेती योग्य जमीन वाले किसान परिवारों के लिए आय सहायता।",
+        "kn": "ಕೃಷಿಯೋಗ್ಯ ಜಮೀನು ಹೊಂದಿರುವ ರೈತ ಕುಟುಂಬಗಳಿಗೆ ಆದಾಯ ಬೆಂಬಲ."
+      },
+      "benefit": {
+        "en": "₹6,000 a year, paid in three instalments of ₹2,000 straight into your bank account.",
+        "hi": "प्रति वर्ष ₹6,000, तीन किस्तों में ₹2,000 सीधे आपके बैंक खाते में।",
+        "kn": "ವರ್ಷಕ್ಕೆ ₹6,000, ಮೂರು ಕಂತುಗಳಲ್ಲಿ ₹2,000 ನೇರವಾಗಿ ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಖಾತೆಗೆ."
+      },
+      "how_to_apply": {
+        "en": "Register on the PM-KISAN portal (Farmers Corner), or visit your nearest Common Service Centre (CSC) or agriculture office.",
+        "hi": "पीएम-किसान पोर्टल (Farmers Corner) पर पंजीकरण करें, या नज़दीकी कॉमन सर्विस सेंटर (CSC) / कृषि कार्यालय जाएं।",
+        "kn": "ಪಿಎಂ-ಕಿಸಾನ್ ಪೋರ್ಟಲ್‌ನಲ್ಲಿ (Farmers Corner) ನೋಂದಣಿ ಮಾಡಿ, ಅಥವಾ ಹತ್ತಿರದ ಕಾಮನ್ ಸರ್ವಿಸ್ ಸೆಂಟರ್ (CSC) / ಕೃಷಿ ಕಚೇರಿಗೆ ಭೇಟಿ ನೀಡಿ."
+      },
+      "apply_url": "https://pmkisan.gov.in",
+      "source_url": "https://pmkisan.gov.in",
+      "documents": [
+        "aadhaar",
+        "bank_passbook",
+        "land_records",
+        "mobile_linked"
+      ],
+      "criteria": [
+        {
+          "field": "owns_agri_land",
+          "op": "is_true",
+          "text": {
+            "en": "You or your family own cultivable agricultural land",
+            "hi": "आपके या आपके परिवार के नाम खेती योग्य जमीन हो",
+            "kn": "ನಿಮ್ಮ ಅಥವಾ ನಿಮ್ಮ ಕುಟುಂಬದ ಹೆಸರಿನಲ್ಲಿ ಕೃಷಿಯೋಗ್ಯ ಜಮೀನು ಇರಬೇಕು"
+          }
+        },
+        {
+          "field": "pays_income_tax",
+          "op": "is_false",
+          "text": {
+            "en": "You do not pay income tax",
+            "hi": "आप आयकर नहीं देते हों",
+            "kn": "ನೀವು ಆದಾಯ ತೆರಿಗೆ ಪಾವತಿಸುತ್ತಿರಬಾರದು"
+          }
+        },
+        {
+          "field": "govt_employee",
+          "op": "is_false",
+          "text": {
+            "en": "You are not a government employee",
+            "hi": "आप सरकारी कर्मचारी न हों",
+            "kn": "ನೀವು ಸರ್ಕಾರಿ ನೌಕರರಾಗಿರಬಾರದು"
+          }
+        }
+      ],
+      "verify": [
+        "Benefit amount and instalment pattern",
+        "Exclusion categories (income tax payers, government employees, pensioners, institutional landholders)",
+        "Whether the landholding must be in your own name for the state"
+      ],
+      "verification_notes": "2026-11-06: Rs 6,000 a year in three Rs 2,000 instalments by DBT, landholding farmer families, exclusions (income tax payers, government employees, PSU personnel, constitutional post holders) confirmed from a PIB document dated 19 Mar 2026 (static.pib.gov.in/WriteReadData/specificdocs/documents/2026/mar/doc2026319829701.pdf). The official operational guidelines on pmkisan.gov.in could not be read (site blocks automated access), so pensioners/institutional landholders, state rules on land in own name and the documents list are NOT confirmed."
+    },
+    {
+      "id": "pm_jay",
+      "level": "central",
+      "category": "health",
+      "name": {
+        "en": "Ayushman Bharat PM-JAY (health cover)",
+        "hi": "आयुष्मान भारत पीएम-जेएवाई (स्वास्थ्य बीमा)",
+        "kn": "ಆಯುಷ್ಮಾನ್ ಭಾರತ್ ಪಿಎಂ-ಜೆಎವೈ (ಆರೋಗ್ಯ ವಿಮೆ)"
+      },
+      "summary": {
+        "en": "Free health insurance (hospital treatment cover) for eligible poor families, and for all senior citizens aged 70 and above.",
+        "hi": "पात्र गरीब परिवारों और 70 वर्ष या उससे अधिक आयु के सभी वरिष्ठ नागरिकों के लिए अस्पताल में मुफ्त इलाज का स्वास्थ्य बीमा कवर।",
+        "kn": "ಅರ್ಹ ಬಡ ಕುಟುಂಬಗಳಿಗೆ ಮತ್ತು 70 ವರ್ಷ ಮೇಲ್ಪಟ್ಟ ಎಲ್ಲಾ ಹಿರಿಯ ನಾಗರಿಕರಿಗೆ ಆಸ್ಪತ್ರೆ ಚಿಕಿತ್ಸೆಯ ಉಚಿತ ವಿಮಾ ರಕ್ಷಣೆ."
+      },
+      "benefit": {
+        "en": "Cashless hospital treatment up to ₹5 lakh per family per year at listed (empanelled) hospitals.",
+        "hi": "सूचीबद्ध (एम्पैनल्ड) अस्पतालों में प्रति परिवार प्रति वर्ष ₹5 लाख तक का कैशलेस इलाज।",
+        "kn": "ಪಟ್ಟಿಯಲ್ಲಿರುವ (ಎಂಪ್ಯಾನೆಲ್ಡ್) ಆಸ್ಪತ್ರೆಗಳಲ್ಲಿ ಕುಟುಂಬಕ್ಕೆ ವರ್ಷಕ್ಕೆ ₹5 ಲಕ್ಷದವರೆಗೆ ನಗದುರಹಿತ ಚಿಕಿತ್ಸೆ."
+      },
+      "how_to_apply": {
+        "en": "Check 'Am I Eligible' on the PM-JAY site, then get your Ayushman card at a CSC, the Ayushman Mitra desk of a listed hospital, or through the Ayushman app.",
+        "hi": "पीएम-जेएवाई साइट पर 'Am I Eligible' देखें, फिर CSC, सूचीबद्ध अस्पताल के आयुष्मान मित्र डेस्क या आयुष्मान ऐप से अपना आयुष्मान कार्ड बनवाएं।",
+        "kn": "ಪಿಎಂ-ಜೆಎವೈ ತಾಣದಲ್ಲಿ 'Am I Eligible' ಪರಿಶೀಲಿಸಿ, ನಂತರ CSC, ಪಟ್ಟಿಯಲ್ಲಿರುವ ಆಸ್ಪತ್ರೆಯ ಆಯುಷ್ಮಾನ್ ಮಿತ್ರ ಡೆಸ್ಕ್ ಅಥವಾ ಆಯುಷ್ಮಾನ್ ಆ್ಯಪ್ ಮೂಲಕ ನಿಮ್ಮ ಆಯುಷ್ಮಾನ್ ಕಾರ್ಡ್ ಪಡೆಯಿರಿ."
+      },
+      "apply_url": "https://beneficiary.nha.gov.in",
+      "source_url": "https://pmjay.gov.in",
+      "documents": [
+        "aadhaar",
+        "ration_card",
+        "age_proof",
+        "mobile_linked"
+      ],
+      "criteria": [
+        {
+          "any_of": [
+            {
+              "field": "age",
+              "op": "gte",
+              "value": 70
+            },
+            {
+              "field": "ration_card",
+              "op": "in",
+              "value": [
+                "bpl",
+                "antyodaya"
+              ],
+              "soft": true
+            }
+          ],
+          "text": {
+            "en": "You are 70 or older, OR your family is on the government's list of eligible poor households (a BPL / Antyodaya card is only a rough indicator; the official check uses the SECC list)",
+            "hi": "आपकी उम्र 70 वर्ष या अधिक हो, या आपका परिवार सरकार की पात्र गरीब परिवारों की सूची में हो (बीपीएल / अंत्योदय कार्ड केवल मोटा संकेत है; आधिकारिक जांच SECC सूची से होती है)",
+            "kn": "ನಿಮಗೆ 70 ವರ್ಷ ಅಥವಾ ಹೆಚ್ಚು ವಯಸ್ಸಾಗಿರಬೇಕು, ಅಥವಾ ನಿಮ್ಮ ಕುಟುಂಬ ಸರ್ಕಾರದ ಅರ್ಹ ಬಡ ಕುಟುಂಬಗಳ ಪಟ್ಟಿಯಲ್ಲಿರಬೇಕು (ಬಿಪಿಎಲ್ / ಅಂತ್ಯೋದಯ ಕಾರ್ಡ್ ಕೇವಲ ಅಂದಾಜು ಸೂಚನೆ; ಅಧಿಕೃತ ಪರಿಶೀಲನೆ SECC ಪಟ್ಟಿಯ ಮೂಲಕ)"
+          }
+        }
+      ],
+      "verify": [
+        "Age-70 senior citizen rule and the cover amount for seniors",
+        "Family eligibility basis (SECC 2011 / state lists) and whether Karnataka runs its own health scheme alongside it",
+        "Cover amount per family"
+      ],
+      "verification_notes": "2026-11-06: age 70+ covered irrespective of income and Rs 5 lakh per family per year confirmed from PIB (11 Sep 2024, pib.gov.in/Pressreleaseshare.aspx?PRID=2053881). Family eligibility basis (SECC / state lists), Karnataka's parallel scheme and the documents list NOT confirmed (nha.gov.in and pmjay.gov.in could not be read)."
+    },
+    {
+      "id": "apy",
+      "level": "central",
+      "category": "pension",
+      "name": {
+        "en": "Atal Pension Yojana (APY)",
+        "hi": "अटल पेंशन योजना (APY)",
+        "kn": "ಅಟಲ್ ಪಿಂಚಣಿ ಯೋಜನೆ (APY)"
+      },
+      "summary": {
+        "en": "A guaranteed monthly pension after age 60, mainly for people without a regular pension, such as workers in the unorganised sector.",
+        "hi": "60 साल (वर्ष) की उम्र के बाद हर महीने गारंटीशुदा पेंशन, मुख्यतः असंगठित क्षेत्र के कामगारों जैसे लोगों के लिए जिनकी कोई नियमित पेंशन नहीं है।",
+        "kn": "60 ವರ್ಷದ ನಂತರ ಖಾತರಿಯ ಮಾಸಿಕ ಪಿಂಚಣಿ; ಮುಖ್ಯವಾಗಿ ಅಸಂಘಟಿತ ವಲಯದ ಕಾರ್ಮಿಕರಂತೆ ನಿಯಮಿತ ಪಿಂಚಣಿ ಇಲ್ಲದವರಿಗೆ."
+      },
+      "benefit": {
+        "en": "A fixed pension of ₹1,000 to ₹5,000 a month from age 60, depending on how much you contribute and when you join.",
+        "hi": "60 वर्ष से ₹1,000 से ₹5,000 प्रति माह की तय पेंशन, जो आपके योगदान और जुड़ने की उम्र पर निर्भर है।",
+        "kn": "60 ವರ್ಷದಿಂದ ತಿಂಗಳಿಗೆ ₹1,000 ರಿಂದ ₹5,000 ನಿಗದಿತ ಪಿಂಚಣಿ; ನೀವು ಕೊಡುವ ಮೊತ್ತ ಮತ್ತು ಸೇರುವ ವಯಸ್ಸಿನ ಮೇಲೆ ಅವಲಂಬಿತ."
+      },
+      "how_to_apply": {
+        "en": "Open an APY account at your bank branch (or through net/mobile banking). The monthly contribution is auto-debited from your savings account.",
+        "hi": "अपनी बैंक शाखा (या नेट/मोबाइल बैंकिंग) में APY खाता खोलें। मासिक योगदान आपके बचत खाते से अपने-आप कट जाता है।",
+        "kn": "ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಶಾಖೆಯಲ್ಲಿ (ಅಥವಾ ನೆಟ್/ಮೊಬೈಲ್ ಬ್ಯಾಂಕಿಂಗ್ ಮೂಲಕ) APY ಖಾತೆ ತೆರೆಯಿರಿ. ಮಾಸಿಕ ವಂತಿಗೆ ನಿಮ್ಮ ಉಳಿತಾಯ ಖಾತೆಯಿಂದ ತಾನಾಗಿ ಕಡಿತವಾಗುತ್ತದೆ."
+      },
+      "apply_url": "https://www.jansuraksha.gov.in",
+      "source_url": "https://www.jansuraksha.gov.in",
+      "documents": [
+        "aadhaar",
+        "bank_passbook",
+        "mobile_linked",
+        "nominee_details"
+      ],
+      "criteria": [
+        {
+          "field": "age",
+          "op": "between",
+          "value": [
+            18,
+            40
+          ],
+          "text": {
+            "en": "Your age is between 18 and 40",
+            "hi": "आपकी उम्र 18 से 40 वर्ष के बीच हो",
+            "kn": "ನಿಮ್ಮ ವಯಸ್ಸು 18 ರಿಂದ 40 ರ ನಡುವೆ ಇರಬೇಕು"
+          }
+        },
+        {
+          "field": "has_bank_account",
+          "op": "is_true",
+          "text": {
+            "en": "You have a savings bank account",
+            "hi": "आपका बचत बैंक खाता हो",
+            "kn": "ನಿಮಗೆ ಉಳಿತಾಯ ಬ್ಯಾಂಕ್ ಖಾತೆ ಇರಬೇಕು"
+          }
+        },
+        {
+          "field": "pays_income_tax",
+          "op": "is_false",
+          "text": {
+            "en": "You do not pay income tax (income tax payers cannot join)",
+            "hi": "आप आयकर नहीं देते हों (आयकरदाता नहीं जुड़ सकते)",
+            "kn": "ನೀವು ಆದಾಯ ತೆರಿಗೆ ಪಾವತಿಸುತ್ತಿರಬಾರದು (ತೆರಿಗೆದಾರರು ಸೇರಲು ಸಾಧ್ಯವಿಲ್ಲ)"
+          }
+        }
+      ],
+      "verify": [
+        "Entry age range 18-40",
+        "Income-tax-payer exclusion (introduced Oct 2022)",
+        "Pension amounts and contribution slabs"
+      ],
+      "verification_notes": "2026-11-06: age 18-40, savings account mandatory, income tax payers not eligible from 1 Oct 2022, pension slabs Rs 1,000-5,000 confirmed (financialservices.gov.in/atal-pension-yojana; PIB 8 May 2025). Contribution amounts and documents list (nominee details, mobile) NOT confirmed."
+    },
+    {
+      "id": "pmjjby",
+      "level": "central",
+      "category": "insurance",
+      "name": {
+        "en": "PM Jeevan Jyoti Bima Yojana (life insurance)",
+        "hi": "प्रधानमंत्री जीवन ज्योति बीमा योजना (जीवन बीमा)",
+        "kn": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಜೀವನ್ ಜ್ಯೋತಿ ಬಿಮಾ ಯೋಜನೆ (ಜೀವ ವಿಮೆ)"
+      },
+      "summary": {
+        "en": "Very low-cost life insurance that you renew every year.",
+        "hi": "बहुत कम खर्च का जीवन बीमा, जिसे हर साल नवीनीकृत किया जाता है।",
+        "kn": "ಪ್ರತಿ ವರ್ಷ ನವೀಕರಿಸುವ ಅತಿ ಕಡಿಮೆ ವೆಚ್ಚದ ಜೀವ ವಿಮೆ."
+      },
+      "benefit": {
+        "en": "₹2 lakh paid to your family if you die from any cause, for a premium of ₹436 a year auto-debited from your bank account.",
+        "hi": "किसी भी कारण से मृत्यु होने पर आपके परिवार को ₹2 लाख, ₹436 वार्षिक प्रीमियम पर जो बैंक खाते से अपने-आप कटता है।",
+        "kn": "ಯಾವುದೇ ಕಾರಣದಿಂದ ಮರಣ ಹೊಂದಿದರೆ ನಿಮ್ಮ ಕುಟುಂಬಕ್ಕೆ ₹2 ಲಕ್ಷ; ವರ್ಷಕ್ಕೆ ₹436 ಪ್ರೀಮಿಯಂ ಬ್ಯಾಂಕ್ ಖಾತೆಯಿಂದ ತಾನಾಗಿ ಕಡಿತ."
+      },
+      "how_to_apply": {
+        "en": "Ask your bank branch (or use net/mobile banking) to enrol you and allow auto-debit of the yearly premium.",
+        "hi": "अपनी बैंक शाखा से (या नेट/मोबाइल बैंकिंग से) नामांकन करवाएं और वार्षिक प्रीमियम की ऑटो-डेबिट की अनुमति दें।",
+        "kn": "ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಶಾಖೆಯಲ್ಲಿ (ಅಥವಾ ನೆಟ್/ಮೊಬೈಲ್ ಬ್ಯಾಂಕಿಂಗ್ ಮೂಲಕ) ನೋಂದಾಯಿಸಿಕೊಂಡು ವಾರ್ಷಿಕ ಪ್ರೀಮಿಯಂ ಸ್ವಯಂ ಕಡಿತಕ್ಕೆ ಒಪ್ಪಿಗೆ ನೀಡಿ."
+      },
+      "apply_url": "https://www.jansuraksha.gov.in",
+      "source_url": "https://www.jansuraksha.gov.in",
+      "documents": [
+        "aadhaar",
+        "bank_passbook",
+        "nominee_details"
+      ],
+      "criteria": [
+        {
+          "field": "age",
+          "op": "between",
+          "value": [
+            18,
+            50
+          ],
+          "text": {
+            "en": "Your age is between 18 and 50",
+            "hi": "आपकी उम्र 18 से 50 वर्ष के बीच हो",
+            "kn": "ನಿಮ್ಮ ವಯಸ್ಸು 18 ರಿಂದ 50 ರ ನಡುವೆ ಇರಬೇಕು"
+          }
+        },
+        {
+          "field": "has_bank_account",
+          "op": "is_true",
+          "text": {
+            "en": "You have a bank account",
+            "hi": "आपका बैंक खाता हो",
+            "kn": "ನಿಮಗೆ ಬ್ಯಾಂಕ್ ಖಾತೆ ಇರಬೇಕು"
+          }
+        }
+      ],
+      "verify": [
+        "Premium (₹436) and cover (₹2 lakh)",
+        "Age limits (18-50 to join, cover up to 55)"
+      ],
+      "verification_notes": "2026-11-06: age 18-50 to join, cover continues to 55 for those who join before 50, Rs 436 a year auto-debited, Rs 2 lakh cover for death from any cause, enrolment at banks/post offices/online with Aadhaar KYC confirmed from PIB (pib.gov.in/PressNoteDetails.aspx?NoteId=154428, 8 May 2025); premium, cover and age also confirmed 2026-10-30 from a PIB release dated May 2026. Nominee detail in documents list NOT confirmed."
+    },
+    {
+      "id": "pmsby",
+      "level": "central",
+      "category": "insurance",
+      "name": {
+        "en": "PM Suraksha Bima Yojana (accident insurance)",
+        "hi": "प्रधानमंत्री सुरक्षा बीमा योजना (दुर्घटना बीमा)",
+        "kn": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಸುರಕ್ಷಾ ಬಿಮಾ ಯೋಜನೆ (ಅಪಘಾತ ವಿಮೆ)"
+      },
+      "summary": {
+        "en": "Accident insurance for a tiny yearly premium.",
+        "hi": "बहुत छोटे वार्षिक प्रीमियम पर दुर्घटना बीमा।",
+        "kn": "ಅತಿ ಸಣ್ಣ ವಾರ್ಷಿಕ ಪ್ರೀಮಿಯಂನಲ್ಲಿ ಅಪಘಾತ ವಿಮೆ."
+      },
+      "benefit": {
+        "en": "₹2 lakh for accidental death or total disability and ₹1 lakh for partial disability, for ₹20 a year.",
+        "hi": "दुर्घटना में मृत्यु या पूर्ण विकलांगता पर ₹2 लाख और आंशिक विकलांगता पर ₹1 लाख, ₹20 प्रति वर्ष पर।",
+        "kn": "ಅಪಘಾತದಲ್ಲಿ ಮರಣ ಅಥವಾ ಪೂರ್ಣ ಅಂಗವೈಕಲ್ಯಕ್ಕೆ ₹2 ಲಕ್ಷ, ಭಾಗಶಃ ಅಂಗವೈಕಲ್ಯಕ್ಕೆ ₹1 ಲಕ್ಷ; ವರ್ಷಕ್ಕೆ ₹20."
+      },
+      "how_to_apply": {
+        "en": "Ask your bank branch (or use net/mobile banking) to enrol you and allow auto-debit of the yearly premium.",
+        "hi": "अपनी बैंक शाखा से (या नेट/मोबाइल बैंकिंग से) नामांकन करवाएं और वार्षिक प्रीमियम की ऑटो-डेबिट की अनुमति दें।",
+        "kn": "ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಶಾಖೆಯಲ್ಲಿ (ಅಥವಾ ನೆಟ್/ಮೊಬೈಲ್ ಬ್ಯಾಂಕಿಂಗ್ ಮೂಲಕ) ನೋಂದಾಯಿಸಿಕೊಂಡು ವಾರ್ಷಿಕ ಪ್ರೀಮಿಯಂ ಸ್ವಯಂ ಕಡಿತಕ್ಕೆ ಒಪ್ಪಿಗೆ ನೀಡಿ."
+      },
+      "apply_url": "https://www.jansuraksha.gov.in",
+      "source_url": "https://www.jansuraksha.gov.in",
+      "documents": [
+        "aadhaar",
+        "bank_passbook",
+        "nominee_details"
+      ],
+      "criteria": [
+        {
+          "field": "age",
+          "op": "between",
+          "value": [
+            18,
+            70
+          ],
+          "text": {
+            "en": "Your age is between 18 and 70",
+            "hi": "आपकी उम्र 18 से 70 वर्ष के बीच हो",
+            "kn": "ನಿಮ್ಮ ವಯಸ್ಸು 18 ರಿಂದ 70 ರ ನಡುವೆ ಇರಬೇಕು"
+          }
+        },
+        {
+          "field": "has_bank_account",
+          "op": "is_true",
+          "text": {
+            "en": "You have a bank account",
+            "hi": "आपका बैंक खाता हो",
+            "kn": "ನಿಮಗೆ ಬ್ಯಾಂಕ್ ಖಾತೆ ಇರಬೇಕು"
+          }
+        }
+      ],
+      "verify": [
+        "Premium (₹20) and cover amounts",
+        "Age limits (18-70)"
+      ],
+      "verification_notes": "2026-10-30: premium (Rs 20), cover (Rs 2 lakh for accidental death / permanent disability) and age band (18-70) confirmed against a PIB release dated May 2026 (static.pib.gov.in/WriteReadData/specificdocs/documents/2026/may/doc2026530879801.pdf). Rs 1 lakh partial-disability cover, how to enrol and documents list NOT confirmed (jansuraksha.gov.in blocks automated access)."
+    },
+    {
+      "id": "pmuy",
+      "level": "central",
+      "category": "women",
+      "name": {
+        "en": "PM Ujjwala Yojana (free LPG connection)",
+        "hi": "प्रधानमंत्री उज्ज्वला योजना (मुफ्त एलपीजी कनेक्शन)",
+        "kn": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಉಜ್ವಲ ಯೋಜನೆ (ಉಚಿತ ಎಲ್‌ಪಿಜಿ ಸಂಪರ್ಕ)"
+      },
+      "summary": {
+        "en": "A free cooking-gas (LPG) connection for women from poor households.",
+        "hi": "गरीब परिवारों की महिलाओं के लिए मुफ्त रसोई गैस (एलपीजी) कनेक्शन।",
+        "kn": "ಬಡ ಕುಟುಂಬಗಳ ಮಹಿಳೆಯರಿಗೆ ಉಚಿತ ಅಡುಗೆ ಅನಿಲ (ಎಲ್‌ಪಿಜಿ) ಸಂಪರ್ಕ."
+      },
+      "benefit": {
+        "en": "A deposit-free LPG connection in the woman's name, with support for the stove and first refill as per the scheme's current terms.",
+        "hi": "महिला के नाम पर बिना जमा राशि के एलपीजी कनेक्शन, तथा योजना की मौजूदा शर्तों के अनुसार चूल्हे और पहली रिफिल में सहायता।",
+        "kn": "ಮಹಿಳೆಯ ಹೆಸರಿನಲ್ಲಿ ಠೇವಣಿ ಇಲ್ಲದ ಎಲ್‌ಪಿಜಿ ಸಂಪರ್ಕ; ಯೋಜನೆಯ ಪ್ರಸ್ತುತ ನಿಯಮಗಳ ಪ್ರಕಾರ ಒಲೆ ಮತ್ತು ಮೊದಲ ರೀಫಿಲ್‌ಗೆ ನೆರವು."
+      },
+      "how_to_apply": {
+        "en": "Submit the KYC form at your nearest LPG distributor, or apply on the Ujjwala portal.",
+        "hi": "नज़दीकी एलपीजी वितरक के पास KYC फॉर्म जमा करें, या उज्ज्वला पोर्टल पर आवेदन करें।",
+        "kn": "ಹತ್ತಿರದ ಎಲ್‌ಪಿಜಿ ವಿತರಕರ ಬಳಿ KYC ಅರ್ಜಿ ಸಲ್ಲಿಸಿ, ಅಥವಾ ಉಜ್ವಲ ಪೋರ್ಟಲ್‌ನಲ್ಲಿ ಅರ್ಜಿ ಹಾಕಿ."
+      },
+      "apply_url": "https://www.pmuy.gov.in",
+      "source_url": "https://www.pmuy.gov.in",
+      "documents": [
+        "aadhaar",
+        "bpl_proof",
+        "bank_passbook",
+        "lpg_declaration",
+        "passport_photo"
+      ],
+      "criteria": [
+        {
+          "field": "gender",
+          "op": "eq",
+          "value": "female",
+          "text": {
+            "en": "The applicant is a woman",
+            "hi": "आवेदक महिला हो",
+            "kn": "ಅರ್ಜಿದಾರರು ಮಹಿಳೆಯಾಗಿರಬೇಕು"
+          }
+        },
+        {
+          "field": "age",
+          "op": "gte",
+          "value": 18,
+          "text": {
+            "en": "The applicant is 18 or older",
+            "hi": "आवेदक की उम्र 18 वर्ष या अधिक हो",
+            "kn": "ಅರ್ಜಿದಾರರಿಗೆ 18 ವರ್ಷ ಅಥವಾ ಹೆಚ್ಚು ವಯಸ್ಸಾಗಿರಬೇಕು"
+          }
+        },
+        {
+          "field": "ration_card",
+          "op": "in",
+          "value": [
+            "bpl",
+            "antyodaya"
+          ],
+          "soft": true,
+          "text": {
+            "en": "The household is poor / on a BPL-type list (BPL or Antyodaya card is a rough indicator; other categories also qualify)",
+            "hi": "परिवार गरीब / बीपीएल जैसी सूची में हो (बीपीएल या अंत्योदय कार्ड मोटा संकेत है; अन्य श्रेणियां भी पात्र हैं)",
+            "kn": "ಕುಟುಂಬ ಬಡ / ಬಿಪಿಎಲ್ ಮಾದರಿಯ ಪಟ್ಟಿಯಲ್ಲಿರಬೇಕು (ಬಿಪಿಎಲ್ ಅಥವಾ ಅಂತ್ಯೋದಯ ಕಾರ್ಡ್ ಅಂದಾಜು ಸೂಚನೆ; ಇತರ ವರ್ಗಗಳೂ ಅರ್ಹ)"
+          }
+        },
+        {
+          "field": "has_lpg",
+          "op": "is_false",
+          "text": {
+            "en": "Your household has no LPG connection yet",
+            "hi": "आपके घर में अभी एलपीजी कनेक्शन न हो",
+            "kn": "ನಿಮ್ಮ ಮನೆಯಲ್ಲಿ ಇನ್ನೂ ಎಲ್‌ಪಿಜಿ ಸಂಪರ್ಕ ಇರಬಾರದು"
+          }
+        }
+      ],
+      "verify": [
+        "Eligible categories (BPL, SC/ST, PMAY, Antyodaya, etc.)",
+        "Current financial support per connection"
+      ],
+      "verification_notes": "2026-11-06: eligible adult-woman categories, age 18+, no other LPG connection in the household, cash assistance Rs 1,600 for a 14.2 kg connection (Rs 1,150 for 5 kg) and KYC documents confirmed on pmuy.gov.in/about.html. App benefit text is deliberately generic ('as per current terms'). App's BPL/Antyodaya card check is only a rough proxy for the many eligible categories. Passport photo and 'LPG declaration' in documents list NOT confirmed."
+    },
+    {
+      "id": "pmay",
+      "level": "central",
+      "category": "housing",
+      "name": {
+        "en": "PM Awas Yojana (housing)",
+        "hi": "प्रधानमंत्री आवास योजना (आवास)",
+        "kn": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಆವಾಸ್ ಯೋಜನೆ (ವಸತಿ)"
+      },
+      "summary": {
+        "en": "Help to build or buy a pucca house: a grant in rural areas and an interest subsidy on home loans in cities.",
+        "hi": "पक्का मकान (घर) बनाने या खरीदने में मदद: ग्रामीण क्षेत्रों में अनुदान और शहरों में गृह ऋण पर ब्याज सब्सिडी।",
+        "kn": "ಪಕ್ಕಾ ಮನೆ ಕಟ್ಟಲು ಅಥವಾ ಖರೀದಿಸಲು ನೆರವು: ಗ್ರಾಮೀಣ ಪ್ರದೇಶದಲ್ಲಿ ಅನುದಾನ, ನಗರಗಳಲ್ಲಿ ಗೃಹ ಸಾಲದ ಮೇಲೆ ಬಡ್ಡಿ ಸಹಾಯಧನ."
+      },
+      "benefit": {
+        "en": "Rural (PMAY-G): financial assistance to build a house, for families on the government's beneficiary list. Urban (PMAY-U 2.0): interest subsidy of up to ₹1.80 lakh on a home loan for households earning up to ₹9 lakh a year.",
+        "hi": "ग्रामीण (PMAY-G): सरकार की लाभार्थी सूची के परिवारों को मकान बनाने के लिए आर्थिक सहायता। शहरी: पात्र आय वर्गों के लिए गृह ऋण पर ब्याज सब्सिडी।",
+        "kn": "ಗ್ರಾಮೀಣ (PMAY-G): ಸರ್ಕಾರದ ಫಲಾನುಭವಿ ಪಟ್ಟಿಯಲ್ಲಿರುವ ಕುಟುಂಬಗಳಿಗೆ ಮನೆ ಕಟ್ಟಲು ಆರ್ಥಿಕ ನೆರವು. ನಗರ: ಅರ್ಹ ಆದಾಯ ವರ್ಗಗಳಿಗೆ ಗೃಹ ಸಾಲದ ಮೇಲೆ ಬಡ್ಡಿ ಸಹಾಯಧನ."
+      },
+      "how_to_apply": {
+        "en": "Rural: contact your Gram Panchayat or block office (selection is from the beneficiary list). Urban: apply through the PMAY-Urban portal, your urban local body or a CSC.",
+        "hi": "ग्रामीण: अपनी ग्राम पंचायत या ब्लॉक कार्यालय से संपर्क करें (चयन लाभार्थी सूची से होता है)। शहरी: PMAY-शहरी पोर्टल, अपनी नगर निकाय या CSC के माध्यम से आवेदन करें।",
+        "kn": "ಗ್ರಾಮೀಣ: ನಿಮ್ಮ ಗ್ರಾಮ ಪಂಚಾಯಿತಿ ಅಥವಾ ಬ್ಲಾಕ್ ಕಚೇರಿಯನ್ನು ಸಂಪರ್ಕಿಸಿ (ಆಯ್ಕೆ ಫಲಾನುಭವಿ ಪಟ್ಟಿಯಿಂದ). ನಗರ: PMAY-ನಗರ ಪೋರ್ಟಲ್, ನಿಮ್ಮ ನಗರ ಸ್ಥಳೀಯ ಸಂಸ್ಥೆ ಅಥವಾ CSC ಮೂಲಕ ಅರ್ಜಿ ಹಾಕಿ."
+      },
+      "apply_url": "https://pmaymis.gov.in",
+      "source_url": "https://pmaymis.gov.in",
+      "documents": [
+        "aadhaar",
+        "bank_passbook",
+        "income_certificate",
+        "house_declaration",
+        "residence_proof"
+      ],
+      "criteria": [
+        {
+          "field": "has_pucca_house",
+          "op": "is_false",
+          "text": {
+            "en": "Your family does not own a pucca house",
+            "hi": "आपके परिवार के पास अपना पक्का मकान न हो",
+            "kn": "ನಿಮ್ಮ ಕುಟುಂಬದ ಬಳಿ ಸ್ವಂತ ಪಕ್ಕಾ ಮನೆ ಇರಬಾರದು"
+          }
+        },
+        {
+          "field": "annual_income",
+          "op": "lte",
+          "value": 900000,
+          "soft": true,
+          "text": {
+            "en": "Household income is within the scheme limits (up to ₹9 lakh a year in urban categories; rural help depends on the government's beneficiary list)",
+            "hi": "परिवार की आय योजना की सीमा के भीतर हो (शहरी श्रेणियों में सालाना ₹9 लाख तक; ग्रामीण सहायता सरकार की लाभार्थी सूची पर निर्भर है)",
+            "kn": "ಕುಟುಂಬದ ಆದಾಯ ಯೋಜನೆಯ ಮಿತಿಯೊಳಗಿರಬೇಕು (ನಗರ ವರ್ಗಗಳಲ್ಲಿ ವರ್ಷಕ್ಕೆ ₹9 ಲಕ್ಷದವರೆಗೆ; ಗ್ರಾಮೀಣ ನೆರವು ಸರ್ಕಾರದ ಫಲಾನುಭವಿ ಪಟ್ಟಿಯನ್ನು ಅವಲಂಬಿಸಿದೆ)"
+          }
+        }
+      ],
+      "verify": [
+        "Current scheme version and portal (PMAY-G and PMAY-Urban 2.0)",
+        "Income bands (EWS / LIG / MIG) and subsidy details",
+        "Rural selection process"
+      ],
+      "verification_notes": "2026-11-06: PMAY-U 2.0 overview on pmaymis.gov.in (pmaymis.gov.in/PMAYMIS2_2024/PDF/PMAY_Overview.pdf): EWS up to Rs 3 lakh, LIG Rs 3-6 lakh, MIG Rs 6-9 lakh a year, no pucca house anywhere in India, loan subsidy up to Rs 1.80 lakh, mission runs 5 years from 1 Sep 2024. CORRECTED the app's earlier Rs 18 lakh limit to Rs 9 lakh. PMAY-G rural selection and its assistance amount NOT confirmed; documents list NOT confirmed. Hindi/Kannada benefit text for the new subsidy sentence still needs native review."
+    },
+    {
+      "id": "ssy",
+      "level": "central",
+      "category": "women",
+      "name": {
+        "en": "Sukanya Samriddhi Yojana (savings for a girl child)",
+        "hi": "सुकन्या समृद्धि योजना (बेटी के लिए बचत)",
+        "kn": "ಸುಕನ್ಯಾ ಸಮೃದ್ಧಿ ಯೋಜನೆ (ಹೆಣ್ಣು ಮಗುವಿಗಾಗಿ ಉಳಿತಾಯ)"
+      },
+      "summary": {
+        "en": "A government-backed savings account for a girl child's education and future, with a higher interest rate and tax benefits.",
+        "hi": "बेटी की पढ़ाई और भविष्य के लिए सरकार समर्थित बचत खाता, जिसमें अधिक ब्याज दर और कर लाभ हैं।",
+        "kn": "ಹೆಣ್ಣು ಮಗುವಿನ ಶಿಕ್ಷಣ ಮತ್ತು ಭವಿಷ್ಯಕ್ಕಾಗಿ ಸರ್ಕಾರಿ ಬೆಂಬಲಿತ ಉಳಿತಾಯ ಖಾತೆ; ಹೆಚ್ಚಿನ ಬಡ್ಡಿ ದರ ಮತ್ತು ತೆರಿಗೆ ಲಾಭ."
+      },
+      "benefit": {
+        "en": "Deposit from ₹250 up to ₹1.5 lakh a year, for up to 15 years. The interest rate is set by the government every quarter. The account matures 21 years after opening. Up to 50% can be withdrawn for education once the girl turns 18 or passes class 10, whichever is earlier.",
+        "hi": "प्रति वर्ष ₹250 से ₹1.5 लाख तक जमा, अधिकतम 15 साल तक। ब्याज दर सरकार हर तिमाही तय करती है। खाता खोलने के 21 साल बाद परिपक्व होता है। बेटी के 18 साल की होने या दसवीं पास करने (जो पहले हो) के बाद शिक्षा के लिए 50% तक निकासी की जा सकती है।",
+        "kn": "ವರ್ಷಕ್ಕೆ ₹250 ರಿಂದ ₹1.5 ಲಕ್ಷದವರೆಗೆ ಠೇವಣಿ, ಗರಿಷ್ಠ 15 ವರ್ಷಗಳವರೆಗೆ. ಬಡ್ಡಿ ದರವನ್ನು ಸರ್ಕಾರ ಪ್ರತಿ ತ್ರೈಮಾಸಿಕ ನಿಗದಿಪಡಿಸುತ್ತದೆ. ಖಾತೆ ತೆರೆದ 21 ವರ್ಷಗಳ ನಂತರ ಪಕ್ವವಾಗುತ್ತದೆ. ಮಗಳಿಗೆ 18 ವರ್ಷ ತುಂಬಿದ ಅಥವಾ 10ನೇ ತರಗತಿ ಪಾಸಾದ ನಂತರ (ಯಾವುದು ಮೊದಲೋ ಅದು) ಶಿಕ್ಷಣಕ್ಕಾಗಿ ಶೇ 50ರವರೆಗೆ ಹಿಂಪಡೆಯಬಹುದು."
+      },
+      "how_to_apply": {
+        "en": "Open the account at any post office or authorised bank branch, in the name of the girl, by her parent or guardian.",
+        "hi": "किसी भी डाकघर या अधिकृत बैंक शाखा में बेटी के नाम से, उसके माता-पिता या अभिभावक द्वारा खाता खोलें।",
+        "kn": "ಯಾವುದೇ ಅಂಚೆ ಕಚೇರಿ ಅಥವಾ ಅಧಿಕೃತ ಬ್ಯಾಂಕ್ ಶಾಖೆಯಲ್ಲಿ ಮಗಳ ಹೆಸರಿನಲ್ಲಿ, ಆಕೆಯ ಪೋಷಕರು ಅಥವಾ ಪಾಲಕರು ಖಾತೆ ತೆರೆಯಿರಿ."
+      },
+      "apply_url": "https://www.indiapost.gov.in/banking-services/savings",
+      "source_url": "https://www.indiapost.gov.in/banking-services/savings",
+      "documents": [
+        "girl_birth_cert",
+        "parent_id",
+        "aadhaar",
+        "passport_photo"
+      ],
+      "criteria": [
+        {
+          "field": "girl_child_under_10",
+          "op": "is_true",
+          "text": {
+            "en": "You have a daughter below 10 years of age (the account is opened in her name)",
+            "hi": "आपकी 10 वर्ष से कम उम्र की बेटी हो (खाता उसके नाम पर खुलता है)",
+            "kn": "ನಿಮಗೆ 10 ವರ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ವಯಸ್ಸಿನ ಮಗಳು ಇರಬೇಕು (ಖಾತೆ ಆಕೆಯ ಹೆಸರಿನಲ್ಲಿ ತೆರೆಯಲಾಗುತ್ತದೆ)"
+          }
+        }
+      ],
+      "verify": [
+        "Deposit limits",
+        "Maturity and withdrawal rules",
+        "Maximum two accounts per family (with exceptions)",
+        "Current interest rate (changes every quarter)"
+      ],
+      "verification_notes": "2026-11-06: confirmed against the India Post SSA details page (pasted by the project owner), the NSI scheme rules (nsiindia.gov.in/writereaddata/SchemeRules/SukanyaSamriddhiAccountSchemeRule.pdf) and a PIB factsheet dated 21 Jan 2026 (static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jan/doc2026121762801.pdf): deposit Rs 250 to Rs 1.5 lakh a year for 15 years, girl under 10 at opening, max two accounts per family (twins/triplets exception), 21-year maturity, up to 50% withdrawal for education after 18 or class 10. Quarterly rate setting is stated by PIB, not by the NSI rules. Document list (Aadhaar, passport photo) is NOT confirmed, so the scheme stays unverified."
+    },
+    {
+      "id": "ignoaps",
+      "level": "central",
+      "category": "pension",
+      "name": {
+        "en": "Indira Gandhi National Old Age Pension (NSAP)",
+        "hi": "इंदिरा गांधी राष्ट्रीय वृद्धावस्था पेंशन (NSAP)",
+        "kn": "ಇಂದಿರಾ ಗಾಂಧಿ ರಾಷ್ಟ್ರೀಯ ವೃದ್ಧಾಪ್ಯ ಪಿಂಚಣಿ (NSAP)"
+      },
+      "summary": {
+        "en": "A monthly pension for elderly people from poor (BPL) households.",
+        "hi": "गरीब (बीपीएल) परिवारों के बुजुर्गों के लिए मासिक पेंशन।",
+        "kn": "ಬಡ (ಬಿಪಿಎಲ್) ಕುಟುಂಬಗಳ ಹಿರಿಯರಿಗೆ ಮಾಸಿಕ ಪಿಂಚಣಿ."
+      },
+      "benefit": {
+        "en": "A monthly pension from the Centre (₹200 at 60-79 years, ₹500 at 80+). Many states add their own amount on top.",
+        "hi": "केंद्र से मासिक पेंशन (60-79 वर्ष पर ₹200, 80+ पर ₹500)। कई राज्य अपनी ओर से राशि जोड़ते हैं।",
+        "kn": "ಕೇಂದ್ರದಿಂದ ಮಾಸಿಕ ಪಿಂಚಣಿ (60-79 ವರ್ಷಕ್ಕೆ ₹200, 80+ ಕ್ಕೆ ₹500). ಅನೇಕ ರಾಜ್ಯಗಳು ತಮ್ಮ ಮೊತ್ತವನ್ನು ಹೆಚ್ಚುವರಿಯಾಗಿ ಸೇರಿಸುತ್ತವೆ."
+      },
+      "how_to_apply": {
+        "en": "Apply at your Gram Panchayat, municipality or taluk/tehsil office, or on your state's social welfare portal.",
+        "hi": "अपनी ग्राम पंचायत, नगरपालिका या तालुका/तहसील कार्यालय में, या राज्य के समाज कल्याण पोर्टल पर आवेदन करें।",
+        "kn": "ನಿಮ್ಮ ಗ್ರಾಮ ಪಂಚಾಯಿತಿ, ನಗರಸಭೆ ಅಥವಾ ತಾಲೂಕು ಕಚೇರಿಯಲ್ಲಿ, ಅಥವಾ ರಾಜ್ಯದ ಸಮಾಜ ಕಲ್ಯಾಣ ಪೋರ್ಟಲ್‌ನಲ್ಲಿ ಅರ್ಜಿ ಹಾಕಿ."
+      },
+      "apply_url": "https://nsap.nic.in",
+      "source_url": "https://nsap.nic.in",
+      "documents": [
+        "aadhaar",
+        "age_proof",
+        "bpl_proof",
+        "bank_passbook",
+        "passport_photo"
+      ],
+      "criteria": [
+        {
+          "field": "age",
+          "op": "gte",
+          "value": 60,
+          "text": {
+            "en": "You are 60 or older",
+            "hi": "आपकी उम्र 60 वर्ष या अधिक हो",
+            "kn": "ನಿಮಗೆ 60 ವರ್ಷ ಅಥವಾ ಹೆಚ್ಚು ವಯಸ್ಸಾಗಿರಬೇಕು"
+          }
+        },
+        {
+          "field": "ration_card",
+          "op": "in",
+          "value": [
+            "bpl",
+            "antyodaya"
+          ],
+          "soft": true,
+          "text": {
+            "en": "Your household is on the state's BPL list (a BPL / Antyodaya card is a rough indicator)",
+            "hi": "आपका परिवार राज्य की बीपीएल सूची में हो (बीपीएल / अंत्योदय कार्ड मोटा संकेत है)",
+            "kn": "ನಿಮ್ಮ ಕುಟುಂಬ ರಾಜ್ಯದ ಬಿಪಿಎಲ್ ಪಟ್ಟಿಯಲ್ಲಿರಬೇಕು (ಬಿಪಿಎಲ್ / ಅಂತ್ಯೋದಯ ಕಾರ್ಡ್ ಅಂದಾಜು ಸೂಚನೆ)"
+          }
+        }
+      ],
+      "verify": [
+        "Central pension amounts per age band",
+        "BPL requirement and state top-ups (Karnataka's own pension schemes may pay more)"
+      ],
+      "verification_notes": "2026-11-06: eligibility (BPL, age 60+) and central amounts (Rs 200 for 60-79, Rs 500 for 80+) and state top-ups confirmed on nsap.nic.in (nsap.nic.in/circular.do?method=aboutus). Documents list NOT confirmed."
+    },
+    {
+      "id": "mudra",
+      "level": "central",
+      "category": "business",
+      "name": {
+        "en": "PM Mudra Yojana (small business loans)",
+        "hi": "प्रधानमंत्री मुद्रा योजना (छोटे व्यवसाय के लिए ऋण)",
+        "kn": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಮುದ್ರಾ ಯೋಜನೆ (ಸಣ್ಣ ವ್ಯಾಪಾರ ಸಾಲ)"
+      },
+      "summary": {
+        "en": "Collateral-free loans for small non-farm businesses such as shops, small manufacturing and services.",
+        "hi": "दुकान, छोटे उत्पादन और सेवाओं जैसे गैर-कृषि छोटे व्यवसायों के लिए बिना गारंटी के ऋण।",
+        "kn": "ಅಂಗಡಿ, ಸಣ್ಣ ಉತ್ಪಾದನೆ ಮತ್ತು ಸೇವೆಗಳಂತಹ ಕೃಷಿಯೇತರ ಸಣ್ಣ ವ್ಯಾಪಾರಗಳಿಗೆ ಜಾಮೀನು ರಹಿತ ಸಾಲ."
+      },
+      "benefit": {
+        "en": "Collateral-free loans in four bands: Shishu (up to ₹50,000), Kishore (₹50,000 to ₹5 lakh), Tarun (₹5 lakh to ₹10 lakh) and Tarun Plus (₹10 lakh to ₹20 lakh, for people who have repaid an earlier Tarun loan).",
+        "hi": "तीन श्रेणियों में ऋण: शिशु (₹50,000 तक), किशोर (₹50,000 से ₹5 लाख) और तरुण (₹5 लाख से ₹10 लाख), साथ ही पहले ऋण चुका चुके लोगों के लिए ऊंची 'तरुण प्लस' श्रेणी।",
+        "kn": "ಮೂರು ವರ್ಗಗಳಲ್ಲಿ ಸಾಲ: ಶಿಶು (₹50,000 ವರೆಗೆ), ಕಿಶೋರ (₹50,000 ರಿಂದ ₹5 ಲಕ್ಷ) ಮತ್ತು ತರುಣ (₹5 ಲಕ್ಷದಿಂದ ₹10 ಲಕ್ಷ); ಹಿಂದಿನ ಸಾಲ ಮರುಪಾವತಿಸಿದವರಿಗೆ ಹೆಚ್ಚಿನ 'ತರುಣ್ ಪ್ಲಸ್' ವರ್ಗ."
+      },
+      "how_to_apply": {
+        "en": "Apply at any bank, NBFC or microfinance institution, or through the Udyamimitra portal.",
+        "hi": "किसी भी बैंक, NBFC या माइक्रोफाइनेंस संस्था में, या उद्यमिमित्र पोर्टल के माध्यम से आवेदन करें।",
+        "kn": "ಯಾವುದೇ ಬ್ಯಾಂಕ್, NBFC ಅಥವಾ ಮೈಕ್ರೋಫೈನಾನ್ಸ್ ಸಂಸ್ಥೆಯಲ್ಲಿ, ಅಥವಾ ಉದ್ಯಮಿಮಿತ್ರ ಪೋರ್ಟಲ್ ಮೂಲಕ ಅರ್ಜಿ ಹಾಕಿ."
+      },
+      "apply_url": "https://www.mudra.org.in",
+      "source_url": "https://www.mudra.org.in",
+      "documents": [
+        "aadhaar",
+        "business_proof",
+        "bank_passbook",
+        "passport_photo",
+        "residence_proof"
+      ],
+      "criteria": [
+        {
+          "field": "age",
+          "op": "gte",
+          "value": 18,
+          "text": {
+            "en": "You are 18 or older",
+            "hi": "आपकी उम्र 18 वर्ष या अधिक हो",
+            "kn": "ನಿಮಗೆ 18 ವರ್ಷ ಅಥವಾ ಹೆಚ್ಚು ವಯಸ್ಸಾಗಿರಬೇಕು"
+          }
+        },
+        {
+          "field": "occupation",
+          "op": "in",
+          "value": [
+            "business",
+            "artisan"
+          ],
+          "text": {
+            "en": "You run (or want to start) a small non-farm business or craft",
+            "hi": "आप छोटा गैर-कृषि व्यवसाय या शिल्प चलाते हों (या शुरू करना चाहते हों)",
+            "kn": "ನೀವು ಸಣ್ಣ ಕೃಷಿಯೇತರ ವ್ಯಾಪಾರ ಅಥವಾ ಕುಶಲ ಕೆಲಸ ನಡೆಸುತ್ತಿರಬೇಕು (ಅಥವಾ ಆರಂಭಿಸಲು ಬಯಸುತ್ತಿರಬೇಕು)"
+          }
+        }
+      ],
+      "verify": [
+        "Loan band limits and the Tarun Plus band",
+        "Whether new entrepreneurs without a running business qualify"
+      ],
+      "verification_notes": "2026-11-06: loan bands, the Rs 20 lakh limit (effective 24 Oct 2024) and 'non-corporate, non-farm' scope confirmed against a PIB document dated 29 Oct 2024 (static.pib.gov.in/WriteReadData/specificdocs/documents/2024/oct/doc20241029426401.pdf). English benefit text updated; Hindi/Kannada benefit text still describes three bands plus Tarun Plus loosely and needs updating with a native speaker. Whether first-time entrepreneurs qualify and the documents list NOT confirmed."
+    },
+    {
+      "id": "pm_vishwakarma",
+      "level": "central",
+      "category": "business",
+      "name": {
+        "en": "PM Vishwakarma (support for traditional artisans)",
+        "hi": "पीएम विश्वकर्मा (पारंपरिक कारीगरों के लिए सहायता)",
+        "kn": "ಪಿಎಂ ವಿಶ್ವಕರ್ಮ (ಸಾಂಪ್ರದಾಯಿಕ ಕುಶಲಕರ್ಮಿಗಳಿಗೆ ನೆರವು)"
+      },
+      "summary": {
+        "en": "Recognition, skill training, tool support and cheap loans for people in listed traditional trades.",
+        "hi": "सूचीबद्ध पारंपरिक कामों से जुड़े लोगों के लिए मान्यता, कौशल प्रशिक्षण, औज़ार सहायता और सस्ता ऋण।",
+        "kn": "ಪಟ್ಟಿ ಮಾಡಲಾದ ಸಾಂಪ್ರದಾಯಿಕ ಕಸುಬುಗಳಲ್ಲಿರುವವರಿಗೆ ಮಾನ್ಯತೆ, ಕೌಶಲ್ಯ ತರಬೇತಿ, ಉಪಕರಣ ನೆರವು ಮತ್ತು ಕಡಿಮೆ ಬಡ್ಡಿಯ ಸಾಲ."
+      },
+      "benefit": {
+        "en": "A PM Vishwakarma certificate and ID card, skill training with a daily stipend, ₹15,000 toolkit support, and collateral-free loans at a concessional 5% interest (₹1 lakh first, then ₹2 lakh).",
+        "hi": "पीएम विश्वकर्मा प्रमाण पत्र और पहचान पत्र, दैनिक भत्ते के साथ कौशल प्रशिक्षण, ₹15,000 की औज़ार सहायता, और 5% की रियायती ब्याज दर पर बिना गारंटी का ऋण (पहले ₹1 लाख, फिर ₹2 लाख)।",
+        "kn": "ಪಿಎಂ ವಿಶ್ವಕರ್ಮ ಪ್ರಮಾಣ ಪತ್ರ ಮತ್ತು ಗುರುತಿನ ಚೀಟಿ, ದೈನಿಕ ಭತ್ಯೆಯೊಂದಿಗೆ ಕೌಶಲ್ಯ ತರಬೇತಿ, ₹15,000 ಉಪಕರಣ ನೆರವು, ಮತ್ತು ರಿಯಾಯಿತಿ 5% ಬಡ್ಡಿಯಲ್ಲಿ ಜಾಮೀನು ರಹಿತ ಸಾಲ (ಮೊದಲು ₹1 ಲಕ್ಷ, ನಂತರ ₹2 ಲಕ್ಷ)."
+      },
+      "how_to_apply": {
+        "en": "Register for free at a Common Service Centre (CSC) or on the PM Vishwakarma portal; your trade is then verified by the local body.",
+        "hi": "कॉमन सर्विस सेंटर (CSC) पर या पीएम विश्वकर्मा पोर्टल पर निःशुल्क पंजीकरण करें; फिर स्थानीय निकाय आपके काम का सत्यापन करता है।",
+        "kn": "ಕಾಮನ್ ಸರ್ವಿಸ್ ಸೆಂಟರ್ (CSC) ಅಥವಾ ಪಿಎಂ ವಿಶ್ವಕರ್ಮ ಪೋರ್ಟಲ್‌ನಲ್ಲಿ ಉಚಿತವಾಗಿ ನೋಂದಾಯಿಸಿ; ನಂತರ ಸ್ಥಳೀಯ ಸಂಸ್ಥೆ ನಿಮ್ಮ ಕಸುಬನ್ನು ಪರಿಶೀಲಿಸುತ್ತದೆ."
+      },
+      "apply_url": "https://pmvishwakarma.gov.in",
+      "source_url": "https://pmvishwakarma.gov.in",
+      "documents": [
+        "aadhaar",
+        "mobile_linked",
+        "bank_passbook",
+        "trade_proof",
+        "ration_card"
+      ],
+      "criteria": [
+        {
+          "field": "traditional_trade",
+          "op": "is_true",
+          "text": {
+            "en": "You work in one of the 18 listed traditional trades (carpenter, blacksmith, goldsmith, potter, sculptor, cobbler, mason, basket/mat/broom maker, toy maker, barber, garland maker, washerman, tailor, boat maker, armourer, hammer & toolkit maker, locksmith, fishing-net maker)",
+            "hi": "आप सूचीबद्ध 18 पारंपरिक कामों में से किसी एक में हों (बढ़ई, लोहार, सुनार, कुम्हार, मूर्तिकार, मोची, राजमिस्त्री, टोकरी/चटाई/झाड़ू बनाने वाले, खिलौना बनाने वाले, नाई, माली, धोबी, दर्जी, नाव बनाने वाले, शस्त्र बनाने वाले, हथौड़ा व औज़ार बनाने वाले, ताला बनाने वाले, मछली जाल बनाने वाले)",
+            "kn": "ನೀವು ಪಟ್ಟಿ ಮಾಡಲಾದ 18 ಸಾಂಪ್ರದಾಯಿಕ ಕಸುಬುಗಳಲ್ಲಿ ಒಂದರಲ್ಲಿರಬೇಕು (ಬಡಗಿ, ಕಮ್ಮಾರ, ಅಕ್ಕಸಾಲಿ, ಕುಂಬಾರ, ಶಿಲ್ಪಿ, ಚಮ್ಮಾರ, ಮೇಸ್ತ್ರಿ, ಬುಟ್ಟಿ/ಚಾಪೆ/ಪೊರಕೆ ತಯಾರಕ, ಆಟಿಕೆ ತಯಾರಕ, ಕ್ಷೌರಿಕ, ಹೂಮಾಲೆ ತಯಾರಕ, ಅಗಸ, ದರ್ಜಿ, ದೋಣಿ ತಯಾರಕ, ಶಸ್ತ್ರ ತಯಾರಕ, ಸುತ್ತಿಗೆ ಮತ್ತು ಉಪಕರಣ ತಯಾರಕ, ಬೀಗ ತಯಾರಕ, ಮೀನುಬಲೆ ತಯಾರಕ)"
+          }
+        },
+        {
+          "field": "age",
+          "op": "gte",
+          "value": 18,
+          "text": {
+            "en": "You are 18 or older",
+            "hi": "आपकी उम्र 18 वर्ष या अधिक हो",
+            "kn": "ನಿಮಗೆ 18 ವರ್ಷ ಅಥವಾ ಹೆಚ್ಚು ವಯಸ್ಸಾಗಿರಬೇಕು"
+          }
+        },
+        {
+          "field": "govt_employee",
+          "op": "is_false",
+          "text": {
+            "en": "You are not a government employee",
+            "hi": "आप सरकारी कर्मचारी न हों",
+            "kn": "ನೀವು ಸರ್ಕಾರಿ ನೌಕರರಾಗಿರಬಾರದು"
+          }
+        }
+      ],
+      "verify": [
+        "Exact list of the 18 trades (check whether handloom weaving is included)",
+        "Loan amounts and interest rate",
+        "Toolkit amount and training stipend",
+        "Restriction on people who recently took Mudra / PMEGP / SVANidhi loans"
+      ],
+      "verification_notes": "2026-11-06: PIB document dated 16 Sep 2026 (static.pib.gov.in/WriteReadData/specificdocs/documents/2026/sep/doc_9881_20260916_11135601.pdf): 18 trades (handloom weaving is NOT one), age 18+, government employees and family excluded, toolkit up to Rs 15,000, stipend Rs 500/day, loans Rs 1 lakh then Rs 2 lakh at 5%. That document lists 'Metalsmith' where the app says 'blacksmith' - check the exact wording on pmvishwakarma.gov.in. It also says applicants should not have taken similar credit-based government loans in the previous five years (repaid Mudra/SVANidhi borrowers are eligible); the app does not check this. Documents list NOT confirmed."
+    },
+    {
+      "id": "gruha_lakshmi",
+      "level": "karnataka",
+      "category": "women",
+      "name": {
+        "en": "Gruha Lakshmi (Karnataka)",
+        "hi": "गृह लक्ष्मी (कर्नाटक)",
+        "kn": "ಗೃಹ ಲಕ್ಷ್ಮಿ (ಕರ್ನಾಟಕ)"
+      },
+      "summary": {
+        "en": "Monthly cash support for the woman head of a family in Karnataka.",
+        "hi": "कर्नाटक में परिवार की महिला मुखिया के लिए मासिक नकद सहायता।",
+        "kn": "ಕರ್ನಾಟಕದಲ್ಲಿ ಕುಟುಂಬದ ಮಹಿಳಾ ಯಜಮಾನಿಗೆ ಮಾಸಿಕ ನಗದು ನೆರವು."
+      },
+      "benefit": {
+        "en": "₹2,000 a month paid directly into the woman head of the family's bank account.",
+        "hi": "परिवार की महिला मुखिया के बैंक खाते में सीधे ₹2,000 प्रति माह।",
+        "kn": "ಕುಟುಂಬದ ಮಹಿಳಾ ಯಜಮಾನಿಯ ಬ್ಯಾಂಕ್ ಖಾತೆಗೆ ನೇರವಾಗಿ ತಿಂಗಳಿಗೆ ₹2,000."
+      },
+      "how_to_apply": {
+        "en": "Apply through the Seva Sindhu portal, or at a Karnataka One / Bangalore One / Grama One centre.",
+        "hi": "सेवा सिंधु पोर्टल के माध्यम से, या कर्नाटक वन / बैंगलोर वन / ग्राम वन केंद्र पर आवेदन करें।",
+        "kn": "ಸೇವಾ ಸಿಂಧು ಪೋರ್ಟಲ್ ಮೂಲಕ, ಅಥವಾ ಕರ್ನಾಟಕ ಒನ್ / ಬೆಂಗಳೂರು ಒನ್ / ಗ್ರಾಮ ಒನ್ ಕೇಂದ್ರದಲ್ಲಿ ಅರ್ಜಿ ಹಾಕಿ."
+      },
+      "apply_url": "https://sevasindhu.karnataka.gov.in",
+      "source_url": "https://sevasindhu.karnataka.gov.in",
+      "documents": [
+        "aadhaar",
+        "ration_card",
+        "bank_passbook",
+        "mobile_linked"
+      ],
+      "criteria": [
+        {
+          "field": "state",
+          "op": "eq",
+          "value": "karnataka",
+          "text": {
+            "en": "You live in Karnataka",
+            "hi": "आप कर्नाटक में रहते हों",
+            "kn": "ನೀವು ಕರ್ನಾಟಕದಲ್ಲಿ ವಾಸಿಸುತ್ತಿರಬೇಕು"
+          }
+        },
+        {
+          "field": "gender",
+          "op": "eq",
+          "value": "female",
+          "text": {
+            "en": "The applicant is a woman",
+            "hi": "आवेदक महिला हो",
+            "kn": "ಅರ್ಜಿದಾರರು ಮಹಿಳೆಯಾಗಿರಬೇಕು"
+          }
+        },
+        {
+          "field": "household_head",
+          "op": "is_true",
+          "text": {
+            "en": "She is the woman head of the family",
+            "hi": "वह परिवार की महिला मुखिया हो",
+            "kn": "ಆಕೆ ಕುಟುಂಬದ ಮಹಿಳಾ ಯಜಮಾನಿಯಾಗಿರಬೇಕು"
+          }
+        },
+        {
+          "field": "pays_income_tax",
+          "op": "is_false",
+          "text": {
+            "en": "No one in the household pays income tax or GST",
+            "hi": "परिवार में कोई आयकर या जीएसटी न देता हो",
+            "kn": "ಕುಟುಂಬದಲ್ಲಿ ಯಾರೂ ಆದಾಯ ತೆರಿಗೆ ಅಥವಾ ಜಿಎಸ್‌ಟಿ ಪಾವತಿಸುತ್ತಿರಬಾರದು"
+          }
+        },
+        {
+          "field": "ration_card",
+          "op": "in",
+          "value": [
+            "bpl",
+            "antyodaya",
+            "apl"
+          ],
+          "text": {
+            "en": "The family has a ration card (BPL, Antyodaya or APL)",
+            "hi": "परिवार के पास राशन कार्ड हो (बीपीएल, अंत्योदय या एपीएल)",
+            "kn": "ಕುಟುಂಬದ ಬಳಿ ಪಡಿತರ ಚೀಟಿ ಇರಬೇಕು (ಬಿಪಿಎಲ್, ಅಂತ್ಯೋದಯ ಅಥವಾ ಎಪಿಎಲ್)"
+          }
+        }
+      ],
+      "verify": [
+        "Current enrolment status (the scheme may have closed or reopened registration)",
+        "Exclusion rules (income tax / GST payers)",
+        "Apply channels and amount"
+      ],
+      "verification_notes": "2026-11-06: NOT confirmed. The official Karnataka sites (sevasindhu, cm.karnataka.gov.in) block automated access and only unofficial websites could be found. Amount, who counts as head of family, income tax/GST exclusion, whether registration is open and the documents list must be checked by a person on the official portal."
+    }
+  ]
+}
